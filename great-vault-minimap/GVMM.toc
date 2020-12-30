@@ -1,0 +1,6 @@
+## Interface: 90000
+## Title: Great Vault Minimap Icon
+## Author: Mizer - US Sargeras
+## Version 0.1
+
+

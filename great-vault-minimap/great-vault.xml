@@ -1,0 +1,58 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/"> 
+	<Script file="greatvaultload.lua"/>
+   <Frame name="greatvaultframe"> 
+      <Scripts> 
+         <OnLoad>
+            greatvault_OnLoad();
+         </OnLoad>
+         <OnEvent>
+         	greatvault_OnEvent();
+         </OnEvent>
+   </Frame>
+	<Frame name="greatvault_IconFrame" enableMouse="true" hidden="true" parent="Minimap" frameStrata="MEDIUM">
+		<Size>
+			<AbsDimension x="33" y="33"/>
+		</Size>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="greatvault_IconTexture" file="Interface\Icons\INV_Misc_Map_01">
+					<Size>
+						<AbsDimension x="26" y="26"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="7" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture file="Interface\Minimap\MiniMap-greatvaulticon">
+					<Size>
+						<AbsDimension x="64" y="64"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnMouseUp>
+				if ( arg1 == "RightButton" ) then
+					local icon = GetTrackingTexture();
+					if ( icon ) then
+						CancelTrackingBuff();
+					end
+				else
+					greatvault_IconFrameOnClick();
+				end
+			</OnMouseUp> 
+			<OnLeave>
+				GameTooltip:Hide();
+			</OnLeave>
+		</Scripts>
+	</Frame>
+</Ui>
