@@ -1,6 +1,5 @@
-## Interface: 90000
+## Interface: 9002
 ## Title: Great Vault Minimap Icon
 ## Author: Mizer - US Sargeras <Power Word Thicc>
 ## Version 0.1
-
 main.lua
